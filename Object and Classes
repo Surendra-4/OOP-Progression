@@ -1,0 +1,157 @@
+Program 1: To test the reference variable
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int var = 20;
+    int &ref = var;
+    
+    cout<<"Value of variable is : "<<var<<endl;
+    cout<<"Value of reference variable is : "<<ref<<endl;
+    
+    ref = 30; //indirectly accessing original variable
+    
+    cout<<"Value of reference variable is : "<<ref<<endl;
+    cout<<"Value of variable is : "<<var<<endl;
+    
+    return 0;
+}
+
+
+
+
+Program 2: Testing scope resolution operator
+
+#include <iostream>
+using namespace std;
+
+int num = 55; //declaring global variable
+
+int main(){
+    int num = 40; //declaring local variable
+    
+    cout<<"Value of local variable is : "<<num<<endl; //accesssing local variable
+    cout<<"Value of global variable is : "<<::num<<endl; //using scope resolution operator
+    
+    return 0;
+}
+
+
+
+
+Program 3: To implement class and objects and access them
+
+
+#include <iostream>
+using namespace std;
+
+class Box {
+    public:
+    double length; //Length of Box
+    double breadth; //Breadth of Box
+    double height; //Height of Box
+};
+
+int main(){
+    Box Box1; //Declaring Box1
+    Box Box2; //Declaring Box2
+    double volume; //Declaring a variable to store Volume
+    
+    //Box 1 specifications
+    Box1.length = 5.0;
+    Box1.breadth = 6.0;
+    Box1.height = 7.0;
+    
+    //Box 2 specifications
+    Box2.length = 2.0;
+    Box2.breadth = 9.0;
+    Box2.height = 6.0;
+    
+    //Volume of Box 1
+    volume = Box1.length * Box1.breadth * Box1.height;
+    cout<<"Volume of the Box 1 is : "<<volume<<endl;
+    
+    //Volume of Box 2
+    volume = Box2.length * Box2.breadth * Box2.height;
+    cout<<"Volume of the Box 2 is : "<<volume<<endl;
+    
+    return 0;
+}
+
+
+
+
+Program 4: Initialize and Display data through method
+
+
+#include <iostream>
+using namespace std;
+
+class Student {
+    public:
+    int id;
+    string name;
+    
+    void insert(int i,string n){
+        id = i;
+        name = n;
+    }
+    
+    void display(){
+        cout<<id<<" "<<name<<endl;
+    }
+};
+
+int main(){
+    Student S1;
+    Student S2;
+    
+    S1.insert(453405,"Surendra");
+    S2.insert(425374,"Uday");
+    
+    S1.display();
+    S2.display();
+    
+    return 0;
+}
+
+
+
+
+Program 5: Same program with 3 members
+
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+    public:
+    int id;
+    string name;
+    float salary;
+    
+    void insert(int i,string n,float s){
+        id = i;
+        name = n;
+        salary = s;
+    }
+    
+    void display(){
+        cout<<id<<" "<<name<<' '<<salary<<endl;
+    }
+};
+
+int main(){
+    Employee e1;
+    Employee e2;
+    
+    e1.insert(453405,"Surendra",57000);
+    e2.insert(425374,"Uday",50750);
+    
+    e1.display();
+    e2.display();
+    
+    return 0;
+}
